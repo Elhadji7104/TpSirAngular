@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Pokemon } from '../pokemon';
+
 
 @Component({
   selector: 'app-my-component',
@@ -6,13 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./my-component.component.css']
 })
 export class MyComponentComponent implements OnInit {
- id: string = '';
- constructor() { 
-
- }
-
-  ngOnInit() {
-
+  pokemons: Pokemon;
+  id = '';
+  name: '';
+  constructor() {this.pokemons = new Pokemon(); }
+  ngOnInit() {}
+  codeToExecute() {
   }
-
 }

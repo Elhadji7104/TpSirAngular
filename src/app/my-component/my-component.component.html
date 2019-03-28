@@ -1,7 +1,19 @@
 <p>
   my-component works!
 </p>
-<input [(ngModel)]="id">
-   <br>
-   <input [(ngModel)]="id" readonly="true" >
-   {{id}}
+<form>
+  <input [(ngModel)]="itemPokemon">
+  {{pokemon.id}}
+  <br>
+  <input [(ngModel)]="itemPokemon" readonly="true" >
+  {{pokemon.name}}
+	<select class="form-control" name="itemPokemon" id="idpokemon"
+                            [(ngModel)]="pokemons.pokemon">
+         <option
+                [ngValue]="pokemons.pokemon? pokemons.pokemon : pokemon.pokemon"
+                            *ngFor="let pokemon of pokemons.pokemon;">
+                            {{pokemon.name}}
+        </option>
+  </select>    <button type="submit" (click)="codeToExecute(this)"class="btn btn-primary">Submit</button>
+
+</form>
